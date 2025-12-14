@@ -53,8 +53,7 @@ class TritonPythonModel:
 
             toxicity_scores = probabilities[:, 1]
 
-            logits_tensor = pb_utils.Tensor("LOGITS",
-                                             logits.numpy().astype(np.float32))
+            logits_tensor = pb_utils.Tensor("LOGITS", logits.numpy().astype(np.float32))
 
             probabilities_tensor = pb_utils.Tensor(
                 "PROBABILITIES", probabilities.numpy().astype(np.float32)
